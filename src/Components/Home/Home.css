@@ -1,0 +1,39 @@
+.content h2::before{
+content: '';
+background-color:#a8a8a83d ;
+height: 2px;
+width: 25%;
+position: absolute;
+top:-2rem;
+}
+.content h2::after{
+content: '';
+background-color:#a8a8a83d ;
+height: 2px;
+width: 90%;
+position: absolute;
+bottom:-3.5rem;
+left: 0;
+}
+.overlay{
+    position: absolute;
+    top: 150%;
+    bottom:0;
+    left: 0;
+    right:0;
+    background-color: rgba(0,0,0, 0.6);
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    text-align:center;
+    transition: all 1s;
+}
+.items:hover .overlay{
+    top: 0;
+}
+.items img{
+    transition: all 1s;
+}
+.items:hover img{
+    transform: scale(1.3);
+}

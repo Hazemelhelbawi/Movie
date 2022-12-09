@@ -11,7 +11,7 @@ export default function Movies() {
 
   async function getTrending(pageNumber) {
     let { data } = await axios.get(
-      `https://api.themoviedb.org/3/trending/tv/day?api_key=09d299943e382dc63582620d44c8b78f&page=${pageNumber}`
+      `https://api.themoviedb.org/3/trending/movie/day?api_key=09d299943e382dc63582620d44c8b78f&page=${pageNumber}`
     );
     setMovies(data.results);
     // console.log(data.results);

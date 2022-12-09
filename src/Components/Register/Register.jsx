@@ -1,9 +1,9 @@
 import axios from 'axios';
 import Joi from 'joi';
 import {Helmet} from "react-helmet";
-
 import React,{ useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
+
 export default function Register() {
     const [loading,setLoading]=useState(true)
     const [errorMsg,setErrorMsg]=useState('')
@@ -32,9 +32,6 @@ async function register(e) {
    let {data}= await axios.post('https://sticky-note-fe.vercel.app/signup',user)
     let respone = data        
     
-    // let {data}= await axios.post('https://route-egypt-api.herokuapp.com/signup',user)
-    // let respone = data
-    // console.log(respone);
     if (respone.message=='success'){
         navigate('/login')
     }
@@ -44,9 +41,7 @@ async function register(e) {
     }
 }
 }
-// useEffect(()=>{
-// console.log(user);
-// },[user])
+
 
 
 console.log(errorMsg);
@@ -87,32 +82,46 @@ function validationUser(){
                     <div className="form-group">
                         <label className='mt-3' htmlFor="first_name">First Name :</label>
                         <input onChange={(e)=>getUserInfo(e)} className='form-control' type="text" id='first_name' name='first_name' />
+                      <div className='text-danger'>
                         {validationError.filter((ele)=>ele.context.label=='first_name')[0]?.message}
+                    </div>
                     </div>
                     <div className="form-group">
                         <label className='mt-3' htmlFor="last_name">Last Name :</label>
                         <input  onChange={(e)=>getUserInfo(e)} className='form-control' type="text" id='last_name' name='last_name' />
+                        <div className='text-danger'>
+
                         {validationError.filter((ele)=>ele.context.label=='last_name')[0]?.message}
 
+                    </div>
                     </div>
                     <div className="form-group">
                         <label className='mt-3' htmlFor="age">Age :</label>
                         <input  onChange={(e)=>getUserInfo(e)} className='form-control' type="number" id='age' name='age' />
+                        <div className='text-danger'>
+
                         {validationError.filter((ele)=>ele.context.label=='age')[0]?.message}
 
+                    </div>
                     </div>
 
                     <div className="form-group">
                         <label className='mt-3' htmlFor="email">Email :</label>
                         <input  onChange={(e)=>getUserInfo(e)} className='form-control' type="text" id='email' name='email' />
+                        <div className='text-danger'>
+
                         {validationError.filter((ele)=>ele.context.label=='email')[0]?.message}
 
+                    </div>
                     </div>
                     <div className="form-group">
                         <label className='mt-3' htmlFor="password">Password :</label>
                         <input  onChange={(e)=>getUserInfo(e)} className='form-control' type="password" id='password' name='password' />
+                        <div className='text-danger'>
+
                         {validationError.filter((ele)=>ele.context.label=='password')[0]?.message}
 
+                    </div>
                     </div>
                     <div className='my-3'>
                     <button className=' d-flex ms-auto btn btn-info'>{loading?`SignUp`:<i className='fas fa-spinner fa-spin'></i>}</button>

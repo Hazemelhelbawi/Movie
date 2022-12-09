@@ -31,6 +31,7 @@ function App() {
       saveUser();
     }
   }, []);
+  
   let logout = () => {
     localStorage.removeItem("token");
     setUserData(null);

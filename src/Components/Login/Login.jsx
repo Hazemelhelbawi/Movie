@@ -24,7 +24,7 @@ console.log(currentUser);
 async function register(e) {
     setLoading(false)
     e.preventDefault()
-    let {data}= await axios.post('https:/sticky-note-fe.vercel.app/signin',user)
+    let {data}= await axios.post('https://sticky-note-fe.vercel.app/signin',user)
     let respone = data
     console.log(respone);
     if (respone.message =='success'){
@@ -46,7 +46,7 @@ console.log(errorMsg);
   return (
         <>
 
-<Helmet>
+            <Helmet>
                 <meta charSet="utf-8" />
                 <title>Login</title>
             </Helmet>

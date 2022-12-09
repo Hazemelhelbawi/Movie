@@ -20,7 +20,7 @@ export default function Navbar({ userData , logout}) {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
             {userData ? (
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
@@ -71,11 +71,11 @@ export default function Navbar({ userData , logout}) {
               </ul>
               {userData ? (
                 <>
-                <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <li className="nav-item dropdown">
+          <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Hello {userData.first_name}
           </a>
-          <ul class="dropdown-menu bg-dark text-white" aria-labelledby="navbarDropdown">
+          <ul className="dropdown-menu bg-dark text-white" aria-labelledby="navbarDropdown">
           <li className="dropdown-item bg-transparent">
                   <NavLink className="nav-link" to="profile">
                    Profile

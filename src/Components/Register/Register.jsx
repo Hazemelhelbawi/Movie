@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Joi from 'joi';
 import {Helmet} from "react-helmet";
-import React,{ useState, useEffect } from 'react'
+import React,{ useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
@@ -32,7 +32,7 @@ async function register(e) {
    let {data}= await axios.post('https://sticky-note-fe.vercel.app/signup',user)
     let respone = data        
     
-    if (respone.message=='success'){
+    if (respone.message==='success'){
         navigate('/login')
     }
     else{
@@ -83,7 +83,7 @@ function validationUser(){
                         <label className='mt-3' htmlFor="first_name">First Name :</label>
                         <input onChange={(e)=>getUserInfo(e)} className='form-control' type="text" id='first_name' name='first_name' />
                       <div className='text-danger'>
-                        {validationError.filter((ele)=>ele.context.label=='first_name')[0]?.message}
+                        {validationError.filter((ele)=>ele.context.label==='first_name')[0]?.message}
                     </div>
                     </div>
                     <div className="form-group">
@@ -91,7 +91,7 @@ function validationUser(){
                         <input  onChange={(e)=>getUserInfo(e)} className='form-control' type="text" id='last_name' name='last_name' />
                         <div className='text-danger'>
 
-                        {validationError.filter((ele)=>ele.context.label=='last_name')[0]?.message}
+                        {validationError.filter((ele)=>ele.context.label==='last_name')[0]?.message}
 
                     </div>
                     </div>
@@ -100,7 +100,7 @@ function validationUser(){
                         <input  onChange={(e)=>getUserInfo(e)} className='form-control' type="number" id='age' name='age' />
                         <div className='text-danger'>
 
-                        {validationError.filter((ele)=>ele.context.label=='age')[0]?.message}
+                        {validationError.filter((ele)=>ele.context.label==='age')[0]?.message}
 
                     </div>
                     </div>
@@ -110,7 +110,7 @@ function validationUser(){
                         <input  onChange={(e)=>getUserInfo(e)} className='form-control' type="text" id='email' name='email' />
                         <div className='text-danger'>
 
-                        {validationError.filter((ele)=>ele.context.label=='email')[0]?.message}
+                        {validationError.filter((ele)=>ele.context.label==='email')[0]?.message}
 
                     </div>
                     </div>
@@ -119,7 +119,7 @@ function validationUser(){
                         <input  onChange={(e)=>getUserInfo(e)} className='form-control' type="password" id='password' name='password' />
                         <div className='text-danger'>
 
-                        {validationError.filter((ele)=>ele.context.label=='password')[0]?.message}
+                        {validationError.filter((ele)=>ele.context.label==='password')[0]?.message}
 
                     </div>
                     </div>

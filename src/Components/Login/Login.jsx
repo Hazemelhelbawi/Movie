@@ -1,7 +1,8 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import Joi from 'joi';
 
 export default function Login({ saveUser }) {
   const [loading, setLoading] = useState(true);
@@ -30,7 +31,7 @@ export default function Login({ saveUser }) {
     );
     let respone = data;
     console.log(respone);
-    if (respone.message == "success") {
+    if (respone.message === "success") {
       localStorage.setItem("token", data.token);
       saveUser();
       navigate("/");
@@ -88,7 +89,7 @@ export default function Login({ saveUser }) {
               <div className="text-danger">
                 {
                   validationError.filter(
-                    (ele) => ele.context.label == "email"
+                    (ele) => ele.context.label === "email"
                   )[0]?.message
                 }
               </div>
@@ -107,7 +108,7 @@ export default function Login({ saveUser }) {
               <div className="text-danger">
                 {
                   validationError.filter(
-                    (ele) => ele.context.label == "password"
+                    (ele) => ele.context.label === "password"
                   )[0]?.message
                 }
               </div>

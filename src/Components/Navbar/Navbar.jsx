@@ -51,22 +51,22 @@ export default function Navbar({ userData , logout}) {
             )}
 
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-              <ul className="list-unstyled d-flex m-auto">
+              <ul className="list-unstyled d-flex m-auto ">
                 <li className="mx-2">
                   
-                  <i  target="_blank" href="www.facebook.com" className="fab fa-facebook  "></i>
+                  <i  target="_blank" to="www.facebook.com" className="fab fa-facebook  "></i>
                 </li>
                 <li className="mx-2">
                   
-                  <i  target="_blank" href="www.twitter.com" className="fab fa-twitter"></i>
+                  <i  target="_blank" to="www.twitter.com" className="fab fa-twitter"></i>
+                </li>
+                <li className="mx-2  ">
+                  
+                  <i   target="_blank" to="https://www.linkedin.com/in/hazem-elhelbawi" className="fab fa-linkedin"></i>
                 </li>
                 <li className="mx-2">
                   
-                  <i   target="_blank" href="www.youtube.com" className="fab fa-youtube"></i>
-                </li>
-                <li className="mx-2">
-                  
-                  <i  target="_blank" href="www.github.com" className="fab fa-github"></i>
+                  <i  target="_blank" to="https://github.com/Hazemelhelbawi" className="fab fa-github"></i>
                 </li>
               </ul>
               {userData ? (

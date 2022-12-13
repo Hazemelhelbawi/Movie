@@ -44,15 +44,19 @@ const [details, setDetails] = useState([])
           <div className="col-md-6">
             <div className="item">
               <h2>{details?.title}{details?.name}</h2>
-              <p>{details?.tagline}{details?.known_for_department}</p>
+              <p>{details?.tagline}{details?.place_of_birth}</p>
               <ul className='list-unstyled d-flex'>
                 {details?.genres?.map(genre=><div className='bg-info p-3 mx-2 rounded-2'>{genre.name}</div>)}
               </ul>
-              <p>Vote :{details?.vote_average}{details?.popularity}</p>
-              <p>Vote count :{details?.vote_count}</p>
-              <p>Popularty :{details?.popularity}</p>
-              <p>release data :{details?.release_date}</p>
-              <p className='text-muted'>{details?.overview}</p>
+              {type.mediaType==='person'?'':
+              <p>Vote :{details?.vote_average}{details?.popularity}</p>}
+               {type.mediaType==='person'?'':
+              <p>Vote count :{details?.vote_count}</p>}
+              {type.mediaType==='person'?'':
+              <p>Popularty :{details?.popularity}</p>}
+             {type.mediaType==='person'?'':
+              <p>release data :{details?.release_date}</p>}
+              <p className='text-muted'>{details?.overview}{details?.biography}</p>
             </div>
           </div>
         </div>
